@@ -1062,7 +1062,7 @@ impl<'a> RoomEventCacheStateLockWriteGuard<'a> {
         Ok(())
     }
 
-    pub(in super::super) async fn get_or_reload_thread(
+    pub(super) async fn get_or_reload_thread(
         &mut self,
         root_event_id: OwnedEventId,
     ) -> Result<&mut ThreadEventCache, EventCacheError> {
