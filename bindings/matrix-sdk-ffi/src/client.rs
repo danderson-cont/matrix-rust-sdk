@@ -1468,6 +1468,7 @@ impl Client {
     }
 
     /// Registers a pusher with given parameters
+    #[allow(clippy::too_many_arguments)]
     pub async fn set_pusher(
         &self,
         identifiers: PusherIdentifiers,
@@ -1476,6 +1477,7 @@ impl Client {
         device_display_name: String,
         profile_tag: Option<String>,
         lang: String,
+        append: bool,
     ) -> Result<(), ClientError> {
         let ids = identifiers.into();
 
@@ -1487,7 +1489,10 @@ impl Client {
             profile_tag,
             lang,
         };
-        self.inner.pusher().set(pusher_init.into()).await?;
+        self.inner
+            .pusher()
+            .set(matrix_sdk::pusher::SetPusherRequest { pusher: pusher_init.into(), append })
+            .await?;
         Ok(())
     }
 

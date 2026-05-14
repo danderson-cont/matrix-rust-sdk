@@ -1,0 +1,1 @@
+- `Pusher::set` now accepts an `impl Into<SetPusherRequest>`, allowing callers to opt into the Matrix spec's `append` flag on `POST /pushers/set`. The existing call-site signature passing a `ruma::api::client::push::Pusher` keeps working via a `From` impl that defaults `append` to `false`.
