@@ -1,0 +1,1 @@
+- [**breaking**] `Client::set_pusher` now takes an `append: bool` parameter.
