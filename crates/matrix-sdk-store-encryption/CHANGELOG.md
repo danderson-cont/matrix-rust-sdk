@@ -4,10 +4,6 @@ All notable changes to this project will be documented in this file.
 
 <!-- changelog start -->
 
-<!-- next-header -->
-
-## [Unreleased] - ReleaseDate
-
 ## [0.17.0] - 2026-05-08
 
 ### Refactor
@@ -42,7 +38,7 @@ No notable changes in this release.
 
 ## [0.10.0] - 2025-02-04
 
-### Bug Fixes
+### Bug fixes
 
 - Remove the usage of an unwrap in the `StoreCipher::import_with_key` method.
   This could have lead to panics if the second argument was an invalid
